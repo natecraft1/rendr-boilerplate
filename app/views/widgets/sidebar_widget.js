@@ -20,7 +20,7 @@ module.exports = BaseView.extend({
 				error : this.handleStats.bind( this )
 			});
 			
-
+			this.running = false;
 			// then apply the res to this.model
 		}
 	},
@@ -56,21 +56,37 @@ module.exports = BaseView.extend({
 		});
 	},
 	nextStat: function(e) {
-		var len = this.$stats.length;
-		if ($(this.$stats[len-1]).position().left !== 20) {
-			this.$stats.each(function(i) {
-				var left = $(this).position().left;
-				$(this).animate({left: left - 220 + 'px'}, { duration: 400, queue: false });
-			});
+		if (!this.running) {
+			var that = this;
+			var len = this.$stats.length;
+			if ($(this.$stats[len-1]).position().left !== 20) {
+				that.running = true;
+				this.$stats.each(function(i) {
+					var left = $(this).position().left;
+					$(this).animate({left: left - 220 + 'px'}, { duration: 400, queue: false, 
+						complete: function() {
+							that.running = false;
+						}
+					});
+				});
+			}
 		}
+		
 	},
 	prevStat: function() {
-		
-		if ($(this.$stats[0]).position().left !== 20) {
-			this.$stats.each(function(i) {
-				var left = $(this).position().left;
-				$(this).animate({left: left + 220 + 'px'}, { duration: 400, queue: false });
-			});
+		if (!this.running) {
+			var that = this;
+			if ($(this.$stats[0]).position().left !== 20) {
+				that.running = true;
+				this.$stats.each(function(i) {
+					var left = $(this).position().left;
+					$(this).animate({left: left + 220 + 'px'}, { duration: 400, queue: false,
+						complete: function() {
+							that.running = false;
+						}
+					});
+				});
+			}
 		}
 	}
 });  
