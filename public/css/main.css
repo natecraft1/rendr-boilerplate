@@ -3465,3 +3465,60 @@ table.show-for-xlarge, table.show-for-large, table.hide-for-small, table.hide-fo
 /* 
 	Go ahead and just put the styles here.
 */
+/* line 6, ../../assets/sass/main.scss */
+#widget {
+  width: 200px;
+  height: 200px;
+  background: lightblue;
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+/* line 13, ../../assets/sass/main.scss */
+#widget .stat {
+  text-align: center;
+  margin-top: 20px;
+  display: inline-block;
+  position: absolute;
+}
+/* line 18, ../../assets/sass/main.scss */
+#widget .stat .key {
+  font-size: 22px;
+}
+/* line 21, ../../assets/sass/main.scss */
+#widget .stat .val {
+  font-size: 40px;
+}
+/* line 25, ../../assets/sass/main.scss */
+#widget .next, #widget .prev {
+  display: inline-block;
+  top: 168px;
+  font-size: 30px;
+  position: absolute;
+  color: grey;
+}
+/* line 32, ../../assets/sass/main.scss */
+#widget .next:hover, #widget .prev:hover {
+  color: blue;
+}
+/* line 35, ../../assets/sass/main.scss */
+#widget .prev {
+  left: 25px;
+}
+/* line 38, ../../assets/sass/main.scss */
+#widget .next {
+  right: 30px;
+}
+
+/* line 42, ../../assets/sass/main.scss */
+#content_container {
+  pointer-events: none;
+  position: relative;
+  left: 50px;
+  padding-right: 30px;
+}
+
+/* line 48, ../../assets/sass/main.scss */
+body {
+  background-color: #DEE3DF;
+}

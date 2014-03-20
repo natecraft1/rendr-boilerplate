@@ -43,7 +43,7 @@ module.exports = function(grunt) {
       },
       stylesheets: {
         files: [stylesheetsDir + '/**/*.scss', stylesheetsDir + '/**/*.scss'],
-        tasks: ['stylus'],
+        tasks: ['compass'],
         options: {
           interrupt: true
         }

@@ -1,5 +1,17 @@
-<div>I'm a widget
+<div id="widget">
 {{#each stats }}
-	{{ key }} {{ value }}
+	<div class="stat">
+		<p class="key">
+		{{ key }} 
+		</p>
+	</br>
+	<p class="val">
+	{{ value }}
+	</p>
+	</div>
 {{/each}}
+
+ 	<a class="prev"> < </a>
+	<a class="next"> > </a>
+
 </div>

@@ -1,6 +1,50 @@
-// grid is 16 columns
 @import "./_zurb";
 
 /* 
 	Go ahead and just put the styles here.
 */
+#widget {
+	width: 200px;
+	height: 200px;
+	background: lightblue;
+	position: relative;
+	overflow: hidden;
+	float: left;
+  .stat {
+  	text-align: center;
+  	margin-top: 20px;
+  	display:inline-block;
+  	position: absolute;
+  	.key {
+  		font-size: 22px;
+  	}
+  	.val {
+  		font-size: 40px;
+  	}
+  }
+  .next, .prev {
+  	display: inline-block;
+  	top: 168px;
+  	font-size: 30px;
+  	position: absolute;
+  	color: grey;
+  }
+  .next:hover, .prev:hover {
+    	color: blue;
+    }
+  .prev {
+  	left: 25px;
+  }
+  .next {
+  	right: 30px;
+  }
+}
+#content_container {
+	pointer-events: none;
+	position: relative; 
+	left: 50px;
+	padding-right: 30px;
+}
+body {
+	background-color: #DEE3DF;
+}
